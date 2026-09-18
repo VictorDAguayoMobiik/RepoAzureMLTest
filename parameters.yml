@@ -1,0 +1,6 @@
+dev:
+  workspace_id: "GUID_DEV"
+test:
+  workspace_id: "GUID_TEST"
+prod:
+  workspace_id: "GUID_PROD"
