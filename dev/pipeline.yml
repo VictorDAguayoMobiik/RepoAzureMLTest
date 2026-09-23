@@ -1,0 +1,23 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+name: churn13-pipeline
+description: Pipeline que entrena y despliega el modelo churn13
+
+jobs:
+  train:
+    type: command
+    component: file:./components/train.yml
+    inputs:
+      training_data:
+        data: azureml:AUTOML_CHURN_T1_ENTRENA_TBL:2
+    outputs:
+      model_output: ./outputs/model
+
+  churn13_job:
+    type: command
+    component: file:./dev/churn_t1_automl_v02-job.yml
+    inputs:
+      training_data:
+        data: azureml:AUTOML_CHURN_T1_ENTRENA_TBL:2
+    outputs:
+      churn13_model: ./outputs/churn_t1_automl_v02-job

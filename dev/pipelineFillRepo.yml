@@ -1,0 +1,23 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+name: export-aml-resources
+description: Exporta todos los jobs y datasets del workspace a archivos YAML
+
+jobs:
+  export_jobs:
+    type: command
+    component: file:./components/export_jobs.yml
+    inputs:
+      workspace_name: ${{ secrets.AZURE_ML_WORKSPACE }}
+      resource_group: ${{ secrets.AZURE_RESOURCE_GROUP }}
+    outputs:
+      jobs_output: ./exports/jobs
+
+  export_datasets:
+    type: command
+    component: file:./components/export_datasets.yml
+    inputs:
+      workspace_name: ${{ secrets.AZURE_ML_WORKSPACE }}
+      resource_group: ${{ secrets.AZURE_RESOURCE_GROUP }}
+    outputs:
+      datasets_output: ./exports/datasets
