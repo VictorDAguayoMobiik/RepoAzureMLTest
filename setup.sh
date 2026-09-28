@@ -27,7 +27,7 @@ az extension add -n ml -y
 # <set_variables>
 GROUP="tp-msp"
 LOCATION="eastus"
-WORKSPACE="main"
+WORKSPACE="ml-msp"
 # </set_variables>
 
 # If RESOURCE_GROUP_NAME is empty, the az configure is pending.
