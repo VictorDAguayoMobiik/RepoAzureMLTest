@@ -25,7 +25,7 @@ az extension add -n ml -y
 
 ## For backward compatibility - running on old subscription
 # <set_variables>
-GROUP="tp-msp"
+GROUP="cicdAMLTest"
 LOCATION="eastus"
 WORKSPACE="ml-msp"
 # </set_variables>
