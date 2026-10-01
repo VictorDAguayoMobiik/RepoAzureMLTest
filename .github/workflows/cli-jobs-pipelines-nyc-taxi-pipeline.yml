@@ -12,6 +12,7 @@ on:
       - run-pipeline-jobs.sh
       - setup.sh
 permissions:
+  id-token: write
   contents: read
 jobs:
   build:
