@@ -20,6 +20,6 @@ jobs:
     environment: azureml://registries/azureml/environments/sklearn-1.5/labels/latest
     compute: azureml:Compute-cluster-VA
     command: >-
-      pip install papermill &&
+      pip install papermill ipykernel &&
       papermill ChurnMensual-AzureML_v2.ipynb
   
